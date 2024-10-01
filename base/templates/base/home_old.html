@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+{%block content%}
+
+<div class="home__container">
+  <div class="sidebar">
+    {% include 'base/components/topic.html'%}
+  </div>
+
+  <div class="feeds">
+    {% if user.is_authenticated %}
+    <h2>Welcome, {{request.user|capfirst}}</h2>
+    <button class="create"><a href="{%url 'create-room'%}">Create Room</a></button>
+    {% endif %}
+    {% include 'base/components/feed.html'%}
+  </div>
+
+  <div class="recent__activities">
+    {% include 'base/components/activity.html' %}
+  </div>
+</div>
+
+{%endblock%}

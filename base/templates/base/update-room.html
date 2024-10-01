@@ -1,0 +1,15 @@
+<style>
+    
+</style>
+
+{%extends 'main.html'%}
+{%block content%}
+<div class="form__container">
+    <h1>Update Room</h1>
+    <form method="POST">
+        {%csrf_token%}
+        {{form.as_p}}
+        <button type="submit" class="blue">Update Room</button>
+    </form>
+</div>
+{%endblock%}
